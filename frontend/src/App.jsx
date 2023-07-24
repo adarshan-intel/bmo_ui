@@ -12,6 +12,8 @@ import Help_About_Us from "./components/Help_About_Us";
 import Order_Details from "./components/Order_Details";
 import Update_rv_info from "./components/Update_rv_info";
 import Customer_Init_Page from "./pages/Customer_Init_Page";
+import Button from "./intel_components/Button";
+
 
 const App = () => {
   return (
@@ -46,10 +48,10 @@ const App = () => {
 
         {/* Customer page */}
         <Route path="/customer" element={<Customer_Init_Page username={"Customer"} />} />
-        
+
         {/* Home page */}
         <Route path="/*" element={<Home />} />
-        
+
       </Routes>
     </>
   );
