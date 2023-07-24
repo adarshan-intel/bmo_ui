@@ -19,9 +19,11 @@ const App = () => {
   return (
     <>
       <Routes>
+        {/* BMO_Init_Server */}
         <Route path="/init" element={<BMO_Init_Server />} />
+        {/* BMO_Deploy_Server */}
         <Route path="/deploy" element={<BMO_Deploy_Server />} />
-
+        
         {/* Admin subpages */}
         <Route path="/admin/update_rv_info" element={<Update_rv_info />} />
         <Route
@@ -36,22 +38,20 @@ const App = () => {
         <Route path="/admin/customer_details" element={<Customer_Details />} />
         <Route path="/admin/help_about_us" element={<Help_About_Us />} />
         <Route path="/admin/add_customer" element={<Add_Customer />} />
-
         {/* Customer subpages */}
         <Route
           path="/customer/device_dashboard"
-          element={<Device_Dashboard_Customer customer={"Customer"} />}
+          element={<Device_Dashboard_Customer customer={'Customer'} />}
         />
-
         {/* Admin page */}
-        <Route path="/admin" element={<Admin_Init_page username={"Admin"} />} />
-
+        <Route path="/admin" element={<Admin_Init_page username={'Admin'} />} />
         {/* Customer page */}
-        <Route path="/customer" element={<Customer_Init_Page username={"Customer"} />} />
-
+        <Route
+          path="/customer"
+          element={<Customer_Init_Page username={'Customer'} />}
+        />
         {/* Home page */}
         <Route path="/*" element={<Home />} />
-
       </Routes>
     </>
   );
