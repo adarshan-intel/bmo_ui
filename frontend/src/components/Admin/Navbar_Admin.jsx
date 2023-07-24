@@ -1,32 +1,27 @@
-import { AccountCircle } from "@mui/icons-material";
-import {
-  AppBar,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { AccountCircle } from '@mui/icons-material';
+import { AppBar, IconButton, Menu, MenuItem, Toolbar } from '@mui/material';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../../../../frontend/src/dist/css/dlux.css'; // dlux-intel css file"
+import Button from '../../intel_components/Button';
 
 const Navbar_Admin = ({ username }) => {
   const navigate = useNavigate();
   const navigationHeaders = [
-    "Update default RV Info",
-    "Device Dashboard",
-    "View/Post Order Details",
-    "Download Micro-OsImage",
-    "Customer Details",
-    "Help/About Us",
-  ]
+    'Update default RV Info',
+    'Device Dashboard',
+    'View/Post Order Details',
+    'Download Micro-OsImage',
+    'Customer Details',
+    'Help/About Us',
+  ];
   const navigationHeadersMap = {
-    "Update default RV Info": "/update_rv_info",
-    "Device Dashboard": "/device_dashboard",
-    "View/Post Order Details": "/order_details",
-    "Download Micro-OsImage": "/download_micro_osimage",
-    "Customer Details": "/customer_details",
-    "Help/About Us": "/help_about_us",
+    'Update default RV Info': '/update_rv_info',
+    'Device Dashboard': '/device_dashboard',
+    'View/Post Order Details': '/order_details',
+    'Download Micro-OsImage': '/download_micro_osimage',
+    'Customer Details': '/customer_details',
+    'Help/About Us': '/help_about_us',
   };
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -42,15 +37,18 @@ const Navbar_Admin = ({ username }) => {
   const handleLogout = () => {
     setAnchorEl(null);
     // TODO
-    navigate("/");
-  }
+    navigate('/');
+  };
   return (
     <>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          {/* <Typography variant="h6" sx={{ flexGrow: 1 }}
             BMO Initialization Server
-          </Typography>
+          </Typography> */}
+          <div class="flex flex-grow">
+            <h6 class="font-semibold text-xl">BMO Initialization Server</h6>
+          </div>
           <div>
             <IconButton
               size="large"
@@ -66,13 +64,13 @@ const Navbar_Admin = ({ username }) => {
               id="menu-appbar"
               anchorEl={anchorEl}
               anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
+                vertical: 'top',
+                horizontal: 'right',
               }}
               keepMounted
               transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
+                vertical: 'top',
+                horizontal: 'right',
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}
@@ -84,10 +82,16 @@ const Navbar_Admin = ({ username }) => {
       </AppBar>
 
       <nav className="bg-gray-200 py-4">
-        <ul className="flex justify-center gap-10">
+        <ul className="flex justify-center gap-10 list-none">
           {navigationHeaders.map((header, index) => (
             <li key={index}>
-              <a href={"/admin" + navigationHeadersMap[header]}>{header}</a>
+              {/* <a href={'/admin' + navigationHeadersMap[header]}>{header}</a> */}
+              <Button
+                text={header}
+                onClick={() =>
+                  navigate('/admin' + navigationHeadersMap[header])
+                }
+              />
             </li>
           ))}
         </ul>

@@ -2,7 +2,7 @@ import React from 'react';
 import '../../../frontend/src/dist/css/dlux.css'; // dlux-intel css file
 import PropTypes from 'prop-types';
 
-const Button = ({ text,type, btn_type, onClick, onKeyPress }) => {
+const Button = ({ text, type, btn_type, onClick, onKeyPress }) => {
   return (
     <>
       {/* btn_type can be primary, secondary, success, danger, warning, info, light, dark */}
@@ -38,6 +38,6 @@ Button.propTypes = {
 Button.defaultPorops = {
   btn_type: 'primary',
   type: 'button',
-}
+};
 
 export default Button;
