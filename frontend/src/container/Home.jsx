@@ -1,6 +1,6 @@
-import { Button } from '@mui/material';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import Button from '../intel_components/Button';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -15,12 +15,8 @@ const Home = () => {
 
   return (
     <div className="flex gap-6 items-center justify-center h-screen">
-      <Button variant="contained" color="primary" onClick={handleInit}>
-        BMO Initialization Server
-      </Button>
-      <Button variant="contained" color="secondary" onClick={handleDeploy}>
-        BMO Deployment Server
-      </Button>
+      <Button text={"BMO Initialization Server"} btn_type={"primary"} onClick={handleInit}/>
+      <Button text={"BMO Deployment Server"} btn_type={"success"} onClick={handleDeploy}/>
     </div>
   );
 }

@@ -45,12 +45,16 @@ const Device_Dashboard_Admin = () => {
       <Navbar_Admin />
       <h1 className="text-4xl font-bold text-center mt-10">Device Dashboard</h1>
       <div className="container mx-auto my-10 flex flex-col gap-4">
-        <TextField
-          label="Search Devices"
+        <input
+          type="text"
+          className="form-control"
+          id="searchDevices"
+          placeholder="Search Devices"
           value={searchQuery}
           onChange={(event) => setSearchQuery(event.target.value)}
         />
-        <div style={{ height: 400, width: "100%" }}>
+
+        <div style={{ height: '100%', width: '100%' }}>
           <DataGrid
             rows={filteredDevices}
             columns={columns}

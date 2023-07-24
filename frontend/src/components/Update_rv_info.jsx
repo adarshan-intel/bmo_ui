@@ -1,19 +1,14 @@
-import {
-  Button,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  TextField,
-} from "@mui/material";
-import { useState } from "react";
-import Navbar_Admin from "./Admin/Navbar_Admin";
+import React, { useState } from 'react';
+import Navbar_Admin from './Admin/Navbar_Admin';
+import Button from '../intel_components/Button';
 
 const Update_rv_info = () => {
   // State variables to keep track of form input values
-  const [dns, setDns] = useState("");
-  const [ip, setIp] = useState("");
-  const [port, setPort] = useState(""); 
-  const [protocol, setProtocol] = useState("http"); // Default protocol is HTTP
+  const [dns, setDns] = useState('');
+  const [ip, setIp] = useState('');
+  const [port, setPort] = useState('');
+  const [protocol, setProtocol] = useState('http'); // Default protocol is HTTP
+  const [agreeTerms, setAgreeTerms] = useState(false);
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -21,7 +16,7 @@ const Update_rv_info = () => {
 
     // TODO: Handle updating of RV info with form input values
     console.log(
-      `Updating RV info with DNS: ${dns}, IP: ${ip}, Port: ${port}, Protocol: ${protocol}`
+      `Updating RV info with DNS: ${dns}, IP: ${ip}, Port: ${port}, Protocol: ${protocol}, Agree to Terms: ${agreeTerms}`
     );
   };
 
@@ -36,37 +31,87 @@ const Update_rv_info = () => {
           onSubmit={handleSubmit}
           className="flex flex-col gap-6 items-center my-10"
         >
-          <TextField
-            label="DNS"
-            value={dns}
-            onChange={(event) => setDns(event.target.value)}
-          />
-          <TextField
-            label="IP"
-            value={ip}
-            onChange={(event) => setIp(event.target.value)}
-          />
-          <TextField
-            label="Port"
-            value={port}
-            onChange={(event) => setPort(event.target.value)}
-          />
-          <RadioGroup
-            value={protocol}
-            onChange={(event) => setProtocol(event.target.value)}
-          >
-            <div className="flex">
-              <FormControlLabel value="http" control={<Radio />} label="HTTP" />
-              <FormControlLabel
-                value="https"
-                control={<Radio />}
-                label="HTTPS"
+          <div className="col-md-4">
+            {/* DNS */}
+            <label htmlFor="validationCustomDNS" className="form-label">
+              DNS
+            </label>
+            <div className="input-group has-validation">
+              <input
+                type="text"
+                className="form-control"
+                id="validationCustomDNS"
+                value={dns}
+                onChange={(event) => setDns(event.target.value)}
+                required
               />
+              <div className="invalid-feedback">Please enter a DNS.</div>
             </div>
-          </RadioGroup>
-          <Button type="submit" variant="contained">
-            Submit
-          </Button>
+          </div>
+          <div className="col-md-4">
+            {/* IP */}
+            <label htmlFor="validationCustomIP" className="form-label">
+              IP
+            </label>
+            <div className="input-group has-validation">
+              <input
+                type="text"
+                className="form-control"
+                id="validationCustomIP"
+                value={ip}
+                onChange={(event) => setIp(event.target.value)}
+                required
+              />
+              <div className="invalid-feedback">Please enter an IP.</div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            {/* Port */}
+            <label htmlFor="validationCustomPort" className="form-label">
+              Port
+            </label>
+            <div className="input-group has-validation">
+              <input
+                type="text"
+                className="form-control"
+                id="validationCustomPort"
+                value={port}
+                onChange={(event) => setPort(event.target.value)}
+                required
+              />
+              <div className="invalid-feedback">Please enter a Port.</div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            {/* Protocol */}
+            <label className="form-label">Protocol</label>
+            <div className="input-group has-validation">
+              <div className="flex justify-around gap-10 mx-auto">
+                <label>
+                  <input
+                    type="radio"
+                    value="http"
+                    checked={protocol === 'http'}
+                    onChange={() => setProtocol('http')}
+                    required
+                  />
+                  HTTP
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="https"
+                    checked={protocol === 'https'}
+                    onChange={() => setProtocol('https')}
+                    required
+                  />
+                  HTTPS
+                </label>
+              </div>
+              <div className="invalid-feedback">Please choose a Protocol.</div>
+            </div>
+          </div>
+          <Button btn_type="primary" text={'Submit'} type="submit" />
         </form>
       </div>
     </>

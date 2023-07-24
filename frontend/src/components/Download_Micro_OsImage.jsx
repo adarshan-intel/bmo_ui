@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar_Admin from "./Admin/Navbar_Admin";
+import Button from "../intel_components/Button";
 
 const Download_Micro_OsImage = () => {
   const handleDownload = () => {
@@ -24,12 +25,7 @@ const Download_Micro_OsImage = () => {
         Download Micro OsImage
       </h1>
       <div className="flex justify-center my-10">
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={handleDownload}
-        >
-          Download Micro OsImage
-        </button>
+        <Button text={"Download Micro OsImage"} onClick={handleDownload} btn_type="primary"/>
       </div>
     </>
   );

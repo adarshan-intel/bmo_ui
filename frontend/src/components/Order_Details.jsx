@@ -36,12 +36,15 @@ const Order_Details = () => {
       <Navbar_Admin />
       <h1 className="text-4xl font-bold text-center mt-10">Order Details</h1>
       <div className="container mx-auto my-10 flex flex-col gap-4">
-        <TextField
-          label="Search orders"
+        <input
+          type="text"
+          className="form-control"
+          id="searchOrders"
+          placeholder="Search orders"
           value={searchQuery}
           onChange={(event) => setSearchQuery(event.target.value)}
         />
-        <div style={{ height: 400, width: "100%" }}>
+        <div style={{ height: 400, width: '100%' }}>
           <DataGrid
             rows={filteredOrders}
             columns={columns}
