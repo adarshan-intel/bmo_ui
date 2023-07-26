@@ -17,6 +17,8 @@ import Update_rv_info_customer from './components/Customer/Update_rv_info_custom
 import Customer_Profile from './components/Customer/Customer_Profile';
 import OV_Manipulation from './components/Customer/OV_Manipulation';
 import OV_Manipulation_Options from './components/Customer/OV_Manipulation_Options';
+import Edit_Customer_Page from './components/Customer/Edit_Customer_Page';
+import Help_About_Us_customer from './components/Customer/Help_About_Us_customer';
 
 const App = () => {
   return (
@@ -53,8 +55,17 @@ const App = () => {
           element={<Update_rv_info_customer />}
         />
         <Route path="/customer/profile" element={<Customer_Profile />} />
-        <Route path="/customer/ov_manipulation/1" element={<OV_Manipulation_Options />} />
+        <Route
+          path="/customer/ov_manipulation/1"
+          element={<OV_Manipulation_Options />}
+        />
         <Route path="/customer/ov_manipulation" element={<OV_Manipulation />} />
+        <Route
+          path="/customer/edit_customer_profile"
+          element={<Edit_Customer_Page />}
+        />
+        <Route path="/customer/help_about_us" element={<Help_About_Us_customer />} />
+
 
         {/* Main pages */}
         <Route path="/admin" element={<Admin_Init_page username={'Admin'} />} />
