@@ -1,4 +1,4 @@
-import { AccountCircle } from "@mui/icons-material";
+import { AccountCircle } from '@mui/icons-material';
 import {
   AppBar,
   IconButton,
@@ -6,25 +6,26 @@ import {
   MenuItem,
   Toolbar,
   Typography,
-} from "@mui/material";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+} from '@mui/material';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Button from '../../intel_components/Button';
 
 const Navbar_Customer = ({ username }) => {
   const navigate = useNavigate();
   const navigationHeaders = [
-    "Update default RV Info",
-    "Device Dashboard",
-    "OV Manipulation",
-    "Edit Customer profile",
-    "Help/About Us",
+    'Update default RV Info',
+    'Device Dashboard',
+    'OV Manipulation',
+    'Edit Customer profile',
+    'Help/About Us',
   ];
   const navigationHeadersMap = {
-    "Update default RV Info": "/update_rv_info",
-    "Device Dashboard": "/device_dashboard",
-    "OV Manipulation": "/ov_manipulation",
-    "Edit Customer profile": "/edit_customer_profile",
-    "Help/About Us": "/help_about_us",
+    'Update default RV Info': '/update_rv_info',
+    'Device Dashboard': '/device_dashboard',
+    'OV Manipulation': '/ov_manipulation',
+    'Edit Customer profile': '/edit_customer_profile',
+    'Help/About Us': '/help_about_us',
   };
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -39,9 +40,17 @@ const Navbar_Customer = ({ username }) => {
 
   const handleLogout = () => {
     setAnchorEl(null);
-    // TODO
-    navigate("/");
+    // TODO - handle logout cases
+    navigate('/');
   };
+
+  const handleProfile = () => {
+    // display user profile
+    setAnchorEl(null);
+    // TODO
+    navigate('/customer/profile');
+  };
+
   return (
     <>
       <AppBar position="static">
@@ -64,17 +73,18 @@ const Navbar_Customer = ({ username }) => {
               id="menu-appbar"
               anchorEl={anchorEl}
               anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
+                vertical: 'top',
+                horizontal: 'right',
               }}
               keepMounted
               transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
+                vertical: 'top',
+                horizontal: 'right',
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
+              <MenuItem onClick={handleProfile}>{username} Profile</MenuItem>
               <MenuItem onClick={handleLogout}>Log out</MenuItem>
             </Menu>
           </div>
@@ -82,10 +92,15 @@ const Navbar_Customer = ({ username }) => {
       </AppBar>
 
       <nav className="bg-gray-200 py-4">
-        <ul className="flex justify-center gap-10">
+        <ul className="flex justify-center gap-10 list-none">
           {navigationHeaders.map((header, index) => (
             <li key={index}>
-              <a href={"/customer" + navigationHeadersMap[header]}>{header}</a>
+              <Button
+                text={header}
+                onClick={() =>
+                  navigate('/customer' + navigationHeadersMap[header])
+                }
+              />
             </li>
           ))}
         </ul>

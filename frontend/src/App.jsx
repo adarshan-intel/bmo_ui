@@ -12,7 +12,11 @@ import Help_About_Us from './components/Help_About_Us';
 import Order_Details from './components/Order_Details';
 import Update_rv_info from './components/Update_rv_info';
 import Customer_Init_Page from './pages/Customer_Init_Page';
-import User_Profile from './components/Admin/User_Profile';
+import Admin_Profile from './components/Admin/Admin_Profile';
+import Update_rv_info_customer from './components/Customer/Update_rv_info_customer';
+import Customer_Profile from './components/Customer/Customer_Profile';
+import OV_Manipulation from './components/Customer/OV_Manipulation';
+import OV_Manipulation_Options from './components/Customer/OV_Manipulation_Options';
 
 const App = () => {
   return (
@@ -37,20 +41,29 @@ const App = () => {
         <Route path="/admin/customer_details" element={<Customer_Details />} />
         <Route path="/admin/help_about_us" element={<Help_About_Us />} />
         <Route path="/admin/add_customer" element={<Add_Customer />} />
-        <Route path="/admin/profile" element={<User_Profile />} />
+        <Route path="/admin/profile" element={<Admin_Profile />} />
+
         {/* Customer subpages */}
         <Route
           path="/customer/device_dashboard"
-          element={<Device_Dashboard_Customer customer={'Customer'} />}
+          element={<Device_Dashboard_Customer customer={'Customerx'} />}
         />
-        {/* Admin page */}
+        <Route
+          path="/customer/update_rv_info"
+          element={<Update_rv_info_customer />}
+        />
+        <Route path="/customer/profile" element={<Customer_Profile />} />
+        <Route path="/customer/ov_manipulation/1" element={<OV_Manipulation_Options />} />
+        <Route path="/customer/ov_manipulation" element={<OV_Manipulation />} />
+
+        {/* Main pages */}
         <Route path="/admin" element={<Admin_Init_page username={'Admin'} />} />
-        {/* Customer page */}
         <Route
           path="/customer"
-          element={<Customer_Init_Page username={'Customer'} />}
+          element={<Customer_Init_Page username={'Customerx'} />}
         />
-        {/* Home page */}
+
+        {/* Home page to select Init or Deploy Server*/}
         <Route path="/*" element={<Home />} />
       </Routes>
     </>

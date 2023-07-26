@@ -1,14 +1,22 @@
-import { TextField } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
-import React, { useState } from "react";
-import { device_data } from "../../data/Device_data";
+import { TextField } from '@mui/material';
+import { DataGrid } from '@mui/x-data-grid';
+import React, { useState } from 'react';
+import { device_data } from '../../data/Device_data';
+import Navbar_Customer from './Navbar_Customer';
 
-const Device_Dashboard_Customer = ({customer}) => {
+const Device_Dashboard_Customer = ({ customer }) => {
+  console.log(customer);
   // Sample data for the table
-  const [devices, setDevices] = useState(device_data);
+
+  // filter those devices which match the ownership name
+  const filtered_devices = device_data.filter(
+    (device) => device.ownership === customer
+  );
+
+  const [devices, setDevices] = useState(filtered_devices);
 
   // State variables for filtering and pagination
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -24,12 +32,12 @@ const Device_Dashboard_Customer = ({customer}) => {
 
   // Define columns for the DataGrid
   const columns = [
-    { field: "Device_serialNo", headerName: "Device_serialNo", flex: 1 },
-    { field: "Device_status", headerName: "Device_status", flex: 1 },
-    { field: "ownership", headerName: "Ownership", flex: 1 },
+    { field: 'Device_serialNo', headerName: 'Device_serialNo', flex: 1 },
+    { field: 'Device_status', headerName: 'Device_status', flex: 1 },
+    { field: 'ownership', headerName: 'Ownership', flex: 1 },
     {
-      field: "Ownership_voucher",
-      headerName: "Ownership_voucher",
+      field: 'Ownership_voucher',
+      headerName: 'Ownership_voucher',
       flex: 1,
       renderCell: (params) => (
         <a href={params.value} target="_blank" rel="noopener noreferrer">
@@ -41,14 +49,21 @@ const Device_Dashboard_Customer = ({customer}) => {
 
   return (
     <>
-      <h1 className="text-4xl font-bold text-center mt-10">Customer Device Dashboard</h1>
+      <Navbar_Customer />
+      <h1 className="text-4xl font-bold text-center mt-10">
+        Customer Device Dashboard
+      </h1>
       <div className="container mx-auto my-10 flex flex-col gap-4">
-        <TextField
-          label="Search Devices"
+        <input
+          type="text"
+          className="form-control"
+          id="searchDevices"
+          placeholder="Search Devices"
           value={searchQuery}
           onChange={(event) => setSearchQuery(event.target.value)}
         />
-        <div style={{ height: 400, width: "100%" }}>
+
+        <div style={{ height: '100%', width: '100%' }}>
           <DataGrid
             rows={filteredDevices}
             columns={columns}
@@ -67,6 +82,6 @@ const Device_Dashboard_Customer = ({customer}) => {
       </div>
     </>
   );
-}
+};
 
-export default Device_Dashboard_Customer
+export default Device_Dashboard_Customer;

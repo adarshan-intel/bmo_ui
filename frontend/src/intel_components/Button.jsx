@@ -30,8 +30,6 @@ Button.propTypes = {
     'dark',
   ]).isRequired,
   onClick: PropTypes.func.isRequired,
-  onKeyPress: PropTypes.func.isRequired,
-  // default type prop is button
 };
 
 Button.defaultPorops = {

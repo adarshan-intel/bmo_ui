@@ -92,7 +92,6 @@ const Navbar_Admin = ({ username }) => {
         <ul className="flex justify-center gap-10 list-none">
           {navigationHeaders.map((header, index) => (
             <li key={index}>
-              {/* <a href={'/admin' + navigationHeadersMap[header]}>{header}</a> */}
               <Button
                 text={header}
                 onClick={() =>
