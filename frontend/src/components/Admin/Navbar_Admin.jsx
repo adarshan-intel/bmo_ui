@@ -45,7 +45,7 @@ const Navbar_Admin = ({ username }) => {
     setAnchorEl(null);
     // TODO
     navigate('/admin/profile');
-  }
+  };
   return (
     <>
       <AppBar position="static">
@@ -79,7 +79,9 @@ const Navbar_Admin = ({ username }) => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleProfile}>Profile</MenuItem>
+              <MenuItem onClick={handleProfile}>
+                Profile
+              </MenuItem>
               <MenuItem onClick={handleLogout}>Log out</MenuItem>
             </Menu>
           </div>
