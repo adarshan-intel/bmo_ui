@@ -33,10 +33,13 @@ const Update_rv_info = () => {
         >
           <div className="col-md-4">
             {/* DNS */}
-            <label htmlFor="validationCustomDNS" className="form-label">
+            {/* <label htmlFor="validationCustomDNS" className="form-label">
               DNS
-            </label>
+            </label> */}
             <div className="input-group has-validation">
+              <span className="input-group-text" id="inputGroupPrepend">
+                DNS
+              </span>
               <input
                 type="text"
                 className="form-control"
@@ -50,10 +53,13 @@ const Update_rv_info = () => {
           </div>
           <div className="col-md-4">
             {/* IP */}
-            <label htmlFor="validationCustomIP" className="form-label">
+            {/* <label htmlFor="validationCustomIP" className="form-label">
               IP
-            </label>
+            </label> */}
             <div className="input-group has-validation">
+              <span className="input-group-text" id="inputGroupPrepend">
+                IP
+              </span>
               <input
                 type="text"
                 className="form-control"
@@ -67,10 +73,13 @@ const Update_rv_info = () => {
           </div>
           <div className="col-md-4">
             {/* Port */}
-            <label htmlFor="validationCustomPort" className="form-label">
+            {/* <label htmlFor="validationCustomPort" className="form-label">
               Port
-            </label>
+            </label> */}
             <div className="input-group has-validation">
+              <span className="input-group-text" id="inputGroupPrepend">
+                Port
+              </span>
               <input
                 type="text"
                 className="form-control"
@@ -84,7 +93,7 @@ const Update_rv_info = () => {
           </div>
           <div className="col-md-4">
             {/* Protocol */}
-            <label className="form-label">Protocol</label>
+            {/* <label className="form-label">Protocol</label> */}
             <div className="input-group has-validation">
               <div className="flex justify-around gap-10 mx-auto">
                 <label>

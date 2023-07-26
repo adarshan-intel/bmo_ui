@@ -19,7 +19,7 @@ const BMO_Init_Server = () => {
     if (event.key === 'Enter') {
       handleSubmit(event);
     }
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,12 +41,12 @@ const BMO_Init_Server = () => {
         <h1 className="text-4xl font-bold">BMO Initialization Server</h1>
         <div className="col-md-4">
           {/* Username */}
-          <label htmlFor="validationCustomUsername" className="form-label">
+          {/* <label htmlFor="validationCustomUsername" className="form-label">
             Username
-          </label>
+          </label> */}
           <div className="input-group has-validation">
             <span className="input-group-text" id="inputGroupPrepend">
-              @
+              Username
             </span>
             <input
               type="text"
@@ -62,9 +62,9 @@ const BMO_Init_Server = () => {
         </div>
         <div className="col-md-4">
           {/* Password */}
-          <label htmlFor="validationCustomPassword" className="form-label">
+          {/* <label htmlFor="validationCustomPassword" className="form-label">
             Password
-          </label>
+          </label> */}
           <div className="input-group has-validation">
             <span className="input-group-text" id="inputGroupPrepend">
               Password
@@ -84,7 +84,7 @@ const BMO_Init_Server = () => {
         <div className="col-12 items-center text-center">
           <Button
             btn_type="primary"
-            text={'Submit'}
+            text={'Sign In'}
             type="submit"
             onClick={handleSubmit}
             onKeyPress={handleEnter}

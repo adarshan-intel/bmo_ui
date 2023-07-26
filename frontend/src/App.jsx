@@ -12,6 +12,7 @@ import Help_About_Us from './components/Help_About_Us';
 import Order_Details from './components/Order_Details';
 import Update_rv_info from './components/Update_rv_info';
 import Customer_Init_Page from './pages/Customer_Init_Page';
+import User_Profile from './components/Admin/User_Profile';
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/admin/customer_details" element={<Customer_Details />} />
         <Route path="/admin/help_about_us" element={<Help_About_Us />} />
         <Route path="/admin/add_customer" element={<Add_Customer />} />
+        <Route path="/admin/profile" element={<User_Profile />} />
         {/* Customer subpages */}
         <Route
           path="/customer/device_dashboard"

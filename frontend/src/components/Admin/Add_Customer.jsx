@@ -12,7 +12,7 @@ const Add_Customer = () => {
     event.preventDefault();
     console.log('Name:', name);
     console.log('Address:', address);
-    console.log('Contact:', contact);
+    console.log('Contact:', contasct);
     // Send form data to backend or do something else with it
     // navigate("/admin/customer_details"); // Assuming this line is for navigation, but it's commented out since it's not included in the modified version
   };
@@ -22,50 +22,41 @@ const Add_Customer = () => {
       <Navbar_Admin />
       <div className="container max-w-lg gap-3 mx-auto my-10">
         <h1 className="text-4xl font-bold text-center">Add Customer</h1>
-        <form onSubmit={handleSubmit}>
-          {/* Name */}
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-lg font-medium text-gray-700">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+          <div className="input-group has-validation">
+            <span className="input-group-text" id="inputGroupPrepend">
               Name
-            </label>
+            </span>
             <input
               type="text"
-              id="name"
+              className="form-control"
+              id="validationCustomUsername"
               value={name}
               onChange={(event) => setName(event.target.value)}
-              className="mt-1 p-2 border rounded-md w-full"
+              aria-describedby="inputGroupPrepend"
               required
             />
+            <div className="invalid-feedback">Please choose a Name.</div>
           </div>
-          {/* Address */}
-          <div className="mb-4">
-            <label htmlFor="address" className="block text-lg font-medium text-gray-700">
-              Address
-            </label>
+
+          {/* Address/Contact */}
+          <div className="input-group has-validation">
+            <span className="input-group-text" id="inputGroupPrepend">
+              Address/Contact
+            </span>
             <input
               type="text"
-              id="address"
+              className="form-control w-96"
+              id="validationCustomUsername"
               value={address}
               onChange={(event) => setAddress(event.target.value)}
-              className="mt-1 p-2 border rounded-md w-full"
+              aria-describedby="inputGroupPrepend"
               required
             />
+            <div className="invalid-feedback">Please choose a Address.</div>
           </div>
-          {/* Contact */}
-          <div className="mb-4">
-            <label htmlFor="contact" className="block text-lg font-medium text-gray-700">
-              Contact
-            </label>
-            <input
-              type="text"
-              id="contact"
-              value={contact}
-              onChange={(event) => setContact(event.target.value)}
-              className="mt-1 p-2 border rounded-md w-full"
-              required
-            />
-          </div>
-          <div className='text-center'>
+
+          <div className="text-center">
             <Button type="submit" btn_type="primary" text="Add Customer" />
           </div>
         </form>

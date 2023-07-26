@@ -39,13 +39,17 @@ const Navbar_Admin = ({ username }) => {
     // TODO
     navigate('/');
   };
+
+  const handleProfile = () => {
+    // display user profile
+    setAnchorEl(null);
+    // TODO
+    navigate('/admin/profile');
+  }
   return (
     <>
       <AppBar position="static">
         <Toolbar>
-          {/* <Typography variant="h6" sx={{ flexGrow: 1 }}
-            BMO Initialization Server
-          </Typography> */}
           <div class="flex flex-grow">
             <h6 class="font-semibold text-xl">BMO Initialization Server</h6>
           </div>
@@ -75,6 +79,7 @@ const Navbar_Admin = ({ username }) => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
+              <MenuItem onClick={handleProfile}>Profile</MenuItem>
               <MenuItem onClick={handleLogout}>Log out</MenuItem>
             </Menu>
           </div>
