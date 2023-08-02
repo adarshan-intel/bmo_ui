@@ -68,24 +68,11 @@ const OV_Manipulation = () => {
       <div className="container mx-auto my-10">
         <h1 className="text-4xl font-bold text-center">OV Manipulation</h1>
         <div style={{ height: 400, width: '100%' }}>
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={5}
-            rowsPerPageOptions={[5, 10, 20]}
-            checkboxSelection
-            disableSelectionOnClick
-            onSelectionModelChange={(ids) => onRowsSelectionHandler(ids)}
-          />
+          <DataGrid rows={rows} columns={columns} pageSize={5} rowsPerPageOptions={[5, 10, 20]} checkboxSelection disableSelectionOnClick onSelectionModelChange={(ids) => onRowsSelectionHandler(ids)} />
         </div>
         {/* Next button */}
         <div className="text-right m-10">
-          <Button
-            type="submit"
-            btn_type="primary"
-            text="Next"
-            onClick={handleNext}
-          />
+          <Button type="submit" btn_type="primary" text="Next" onClick={handleNext} />
         </div>
       </div>
     </>

@@ -27,15 +27,7 @@ const Add_Customer = () => {
             <span className="input-group-text" id="inputGroupPrepend">
               Name
             </span>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustomUsername"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              aria-describedby="inputGroupPrepend"
-              required
-            />
+            <input type="text" className="form-control" id="validationCustomUsername" value={name} onChange={(event) => setName(event.target.value)} aria-describedby="inputGroupPrepend" required />
             <div className="invalid-feedback">Please choose a Name.</div>
           </div>
 
@@ -44,15 +36,7 @@ const Add_Customer = () => {
             <span className="input-group-text" id="inputGroupPrepend">
               Address/Contact
             </span>
-            <input
-              type="text"
-              className="form-control w-96"
-              id="validationCustomUsername"
-              value={address}
-              onChange={(event) => setAddress(event.target.value)}
-              aria-describedby="inputGroupPrepend"
-              required
-            />
+            <input type="text" className="form-control w-96" id="validationCustomUsername" value={address} onChange={(event) => setAddress(event.target.value)} aria-describedby="inputGroupPrepend" required />
             <div className="invalid-feedback">Please choose a Address.</div>
           </div>
 

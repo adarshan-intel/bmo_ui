@@ -1,6 +1,4 @@
 /* @import "~@intc/dlux-bootstrap/dist/css/dlux.css"; */
-@import "../../frontend/src/dist/css/dlux.css"
-
-@tailwind base;
+@import '../../frontend/src/dist/css/dlux.css' @tailwind base;
 @tailwind components;
 @tailwind utilities;

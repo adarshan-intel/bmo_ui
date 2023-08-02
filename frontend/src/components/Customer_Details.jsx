@@ -20,11 +20,7 @@ const Customer_Details = () => {
   // Filter the customers based on the search query
   const filteredcustomers = customers.filter((device) => {
     const query = searchQuery.toLowerCase();
-    return (
-      device.Name.toLowerCase().includes(query) ||
-      device.CustomerID.toLowerCase().includes(query) ||
-      device.Contact_Address.toLowerCase().includes(query)
-    );
+    return device.Name.toLowerCase().includes(query) || device.CustomerID.toLowerCase().includes(query) || device.Contact_Address.toLowerCase().includes(query);
   });
 
   // Define columns for the DataGrid
@@ -49,14 +45,7 @@ const Customer_Details = () => {
       <Navbar_Admin />
       <h1 className="text-4xl font-bold text-center mt-10">Customer Details</h1>
       <div className="container mx-auto my-10 flex flex-col gap-4">
-        <input
-          type="text"
-          className="form-control"
-          id="searchCustomers"
-          placeholder="Search customers"
-          value={searchQuery}
-          onChange={(event) => setSearchQuery(event.target.value)}
-        />
+        <input type="text" className="form-control" id="searchCustomers" placeholder="Search customers" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
         <div style={{ height: 400, width: '100%' }}>
           <DataGrid
             rows={filteredcustomers}

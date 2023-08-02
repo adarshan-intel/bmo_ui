@@ -6,11 +6,7 @@ const Button = ({ text, type, btn_type, onClick }) => {
   return (
     <>
       {/* btn_type can be primary, secondary, success, danger, warning, info, light, dark */}
-      <button
-        type={type}
-        className={`btn btn-${btn_type} me-1`}
-        onClick={onClick}
-      >
+      <button type={type} className={`btn btn-${btn_type} me-1`} onClick={onClick}>
         {text}
       </button>
     </>
@@ -19,16 +15,7 @@ const Button = ({ text, type, btn_type, onClick }) => {
 
 // PropTypes definition
 Button.propTypes = {
-  btn_type: PropTypes.oneOf([
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-    'light',
-    'dark',
-  ]).isRequired,
+  btn_type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']).isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

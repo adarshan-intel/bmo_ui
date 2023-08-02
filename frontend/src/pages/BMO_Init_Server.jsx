@@ -34,10 +34,7 @@ const BMO_Init_Server = () => {
 
   return (
     <div className="my-10">
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-6 items-center my-10"
-      >
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6 items-center my-10">
         <h1 className="text-4xl font-bold">BMO Initialization Server</h1>
         <div className="col-md-4">
           {/* Username */}
@@ -48,15 +45,7 @@ const BMO_Init_Server = () => {
             <span className="input-group-text" id="inputGroupPrepend">
               Username
             </span>
-            <input
-              type="text"
-              className="form-control"
-              id="validationCustomUsername"
-              value={username}
-              onChange={handleUsernameChange}
-              aria-describedby="inputGroupPrepend"
-              required
-            />
+            <input type="text" className="form-control" id="validationCustomUsername" value={username} onChange={handleUsernameChange} aria-describedby="inputGroupPrepend" required />
             <div className="invalid-feedback">Please choose a username.</div>
           </div>
         </div>
@@ -69,26 +58,12 @@ const BMO_Init_Server = () => {
             <span className="input-group-text" id="inputGroupPrepend">
               Password
             </span>
-            <input
-              type="password"
-              className="form-control"
-              id="validationCustomPassword"
-              value={password}
-              onChange={handlePasswordChange}
-              aria-describedby="inputGroupPrepend"
-              required
-            />
+            <input type="password" className="form-control" id="validationCustomPassword" value={password} onChange={handlePasswordChange} aria-describedby="inputGroupPrepend" required />
             <div className="invalid-feedback">Please choose a Password.</div>
           </div>
         </div>
         <div className="col-12 items-center text-center">
-          <Button
-            btn_type="primary"
-            text={'Sign In'}
-            type="submit"
-            onClick={handleSubmit}
-            onKeyPress={handleEnter}
-          ></Button>
+          <Button btn_type="primary" text={'Sign In'} type="submit" onClick={handleSubmit} onKeyPress={handleEnter}></Button>
         </div>
       </form>
     </div>

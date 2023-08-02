@@ -6,9 +6,7 @@ const Customer_Init_Page = ({ username }) => {
   return (
     <>
       <Navbar_Customer />
-      <p className="text-center m-10">
-        Navigate to customer subpages from the above navigation bar
-      </p>
+      <p className="text-center m-10">Navigate to customer subpages from the above navigation bar</p>
     </>
   );
 };

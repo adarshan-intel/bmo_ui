@@ -26,53 +26,32 @@ const App = () => {
       <Routes>
         {/* BMO_Init_Server */}
         <Route path="/init" element={<BMO_Init_Server />} />
+
         {/* BMO_Deploy_Server */}
         <Route path="/deploy" element={<BMO_Deploy_Server />} />
 
         {/* Admin subpages */}
         <Route path="/admin/update_rv_info" element={<Update_rv_info />} />
-        <Route
-          path="/admin/device_dashboard"
-          element={<Device_Dashboard_Admin />}
-        />
+        <Route path="/admin/device_dashboard" element={<Device_Dashboard_Admin />} />
         <Route path="/admin/order_details" element={<Order_Details />} />
-        <Route
-          path="/admin/download_micro_osimage"
-          element={<Download_Micro_OsImage />}
-        />
+        <Route path="/admin/download_micro_osimage" element={<Download_Micro_OsImage />} />
         <Route path="/admin/customer_details" element={<Customer_Details />} />
         <Route path="/admin/help_about_us" element={<Help_About_Us />} />
         <Route path="/admin/add_customer" element={<Add_Customer />} />
         <Route path="/admin/profile" element={<Admin_Profile />} />
 
         {/* Customer subpages */}
-        <Route
-          path="/customer/device_dashboard"
-          element={<Device_Dashboard_Customer customer={'Customerx'} />}
-        />
-        <Route
-          path="/customer/update_rv_info"
-          element={<Update_rv_info_customer />}
-        />
+        <Route path="/customer/device_dashboard" element={<Device_Dashboard_Customer customer={'Customerx'} />} />
+        <Route path="/customer/update_rv_info" element={<Update_rv_info_customer />} />
         <Route path="/customer/profile" element={<Customer_Profile />} />
-        <Route
-          path="/customer/ov_manipulation/1"
-          element={<OV_Manipulation_Options />}
-        />
+        <Route path="/customer/ov_manipulation/1" element={<OV_Manipulation_Options />} />
         <Route path="/customer/ov_manipulation" element={<OV_Manipulation />} />
-        <Route
-          path="/customer/edit_customer_profile"
-          element={<Edit_Customer_Page />}
-        />
+        <Route path="/customer/edit_customer_profile" element={<Edit_Customer_Page />} />
         <Route path="/customer/help_about_us" element={<Help_About_Us_customer />} />
-
 
         {/* Main pages */}
         <Route path="/admin" element={<Admin_Init_page username={'Admin'} />} />
-        <Route
-          path="/customer"
-          element={<Customer_Init_Page username={'Customerx'} />}
-        />
+        <Route path="/customer" element={<Customer_Init_Page username={'Customerx'} />} />
 
         {/* Home page to select Init or Deploy Server*/}
         <Route path="/*" element={<Home />} />
