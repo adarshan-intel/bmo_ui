@@ -15,7 +15,9 @@ const Update_rv_info = () => {
     event.preventDefault();
 
     // TODO: Handle updating of RV info with form input values
-    console.log(`Updating RV info with DNS: ${dns}, IP: ${ip}, Port: ${port}, Protocol: ${protocol}, Agree to Terms: ${agreeTerms}`);
+    console.log(
+      `Updating RV info with DNS: ${dns}, IP: ${ip}, Port: ${port}, Protocol: ${protocol}, Agree to Terms: ${agreeTerms}`
+    );
   };
 
   return (
@@ -33,7 +35,14 @@ const Update_rv_info = () => {
               <span className="input-group-text" id="inputGroupPrepend">
                 DNS
               </span>
-              <input type="text" className="form-control" id="validationCustomDNS" value={dns} onChange={(event) => setDns(event.target.value)} required />
+              <input
+                type="text"
+                className="form-control"
+                id="validationCustomDNS"
+                value={dns}
+                onChange={(event) => setDns(event.target.value)}
+                required
+              />
               <div className="invalid-feedback">Please enter a DNS.</div>
             </div>
           </div>
@@ -46,7 +55,14 @@ const Update_rv_info = () => {
               <span className="input-group-text" id="inputGroupPrepend">
                 IP
               </span>
-              <input type="text" className="form-control" id="validationCustomIP" value={ip} onChange={(event) => setIp(event.target.value)} required />
+              <input
+                type="text"
+                className="form-control"
+                id="validationCustomIP"
+                value={ip}
+                onChange={(event) => setIp(event.target.value)}
+                required
+              />
               <div className="invalid-feedback">Please enter an IP.</div>
             </div>
           </div>
@@ -59,7 +75,14 @@ const Update_rv_info = () => {
               <span className="input-group-text" id="inputGroupPrepend">
                 Port
               </span>
-              <input type="text" className="form-control" id="validationCustomPort" value={port} onChange={(event) => setPort(event.target.value)} required />
+              <input
+                type="text"
+                className="form-control"
+                id="validationCustomPort"
+                value={port}
+                onChange={(event) => setPort(event.target.value)}
+                required
+              />
               <div className="invalid-feedback">Please enter a Port.</div>
             </div>
           </div>
@@ -69,11 +92,23 @@ const Update_rv_info = () => {
             <div className="input-group has-validation">
               <div className="flex justify-around gap-10 mx-auto">
                 <label>
-                  <input type="radio" value="http" checked={protocol === 'http'} onChange={() => setProtocol('http')} required />
+                  <input
+                    type="radio"
+                    value="http"
+                    checked={protocol === 'http'}
+                    onChange={() => setProtocol('http')}
+                    required
+                  />
                   HTTP
                 </label>
                 <label>
-                  <input type="radio" value="https" checked={protocol === 'https'} onChange={() => setProtocol('https')} required />
+                  <input
+                    type="radio"
+                    value="https"
+                    checked={protocol === 'https'}
+                    onChange={() => setProtocol('https')}
+                    required
+                  />
                   HTTPS
                 </label>
               </div>

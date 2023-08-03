@@ -1,14 +1,9 @@
-import { TextField } from '@mui/material';
-import { DataGrid } from '@mui/x-data-grid';
 import React, { useState } from 'react';
+import { DataGrid } from '@mui/x-data-grid';
+import Navbar_Deploy from '../Navbar_Deploy';
 import { device_data } from '../../../data/Device_data';
-import Navbar_Customer from './Navbar_Customer';
 
-const Device_Dashboard_Customer = ({ customer }) => {
-  console.log(customer);
-  // Sample data for the table
-
-  // filter those devices which match the ownership name
+const Device_Dashboard_Admin_Deploy = ({ customer }) => {
   const filtered_devices = device_data.filter((device) => device.ownership === customer);
 
   const [devices, setDevices] = useState(filtered_devices);
@@ -47,8 +42,8 @@ const Device_Dashboard_Customer = ({ customer }) => {
 
   return (
     <>
-      <Navbar_Customer />
-      <h1 className="text-4xl font-bold text-center mt-10">Customer Device Dashboard</h1>
+      <Navbar_Deploy /> {/* Render the Navbar_Deploy component */}
+      <h1 className="text-4xl font-bold text-center mt-10">Device Dashboard Admin Deploy</h1>
       <div className="container mx-auto my-10 flex flex-col gap-4">
         <input
           type="text"
@@ -80,4 +75,4 @@ const Device_Dashboard_Customer = ({ customer }) => {
   );
 };
 
-export default Device_Dashboard_Customer;
+export default Device_Dashboard_Admin_Deploy;

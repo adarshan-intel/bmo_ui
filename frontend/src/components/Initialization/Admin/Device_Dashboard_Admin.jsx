@@ -16,7 +16,11 @@ const Device_Dashboard_Admin = () => {
   // Filter the devices based on the search query
   const filteredDevices = devices.filter((device) => {
     const query = searchQuery.toLowerCase();
-    return device.Device_serialNo.toLowerCase().includes(query) || device.Device_status.toLowerCase().includes(query) || device.ownership.toLowerCase().includes(query);
+    return (
+      device.Device_serialNo.toLowerCase().includes(query) ||
+      device.Device_status.toLowerCase().includes(query) ||
+      device.ownership.toLowerCase().includes(query)
+    );
   });
 
   // Define columns for the DataGrid
@@ -41,7 +45,14 @@ const Device_Dashboard_Admin = () => {
       <Navbar_Admin />
       <h1 className="text-4xl font-bold text-center mt-10">Device Dashboard</h1>
       <div className="container mx-auto my-10 flex flex-col gap-4">
-        <input type="text" className="form-control" id="searchDevices" placeholder="Search Devices" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
+        <input
+          type="text"
+          className="form-control"
+          id="searchDevices"
+          placeholder="Search Devices"
+          value={searchQuery}
+          onChange={(event) => setSearchQuery(event.target.value)}
+        />
 
         <div style={{ height: '100%', width: '100%' }}>
           <DataGrid

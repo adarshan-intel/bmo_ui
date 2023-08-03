@@ -17,7 +17,11 @@ const Order_Details = () => {
   // Filter the devices based on the search query
   const filteredOrders = order_details.filter((device) => {
     const query = searchQuery.toLowerCase();
-    return device.Customer.toLowerCase().includes(query) || device.Device_Serial_No.toLowerCase().includes(query) || device.Date_of_order.toLowerCase().includes(query);
+    return (
+      device.Customer.toLowerCase().includes(query) ||
+      device.Device_Serial_No.toLowerCase().includes(query) ||
+      device.Date_of_order.toLowerCase().includes(query)
+    );
   });
 
   // Define columns for the DataGrid
@@ -32,7 +36,14 @@ const Order_Details = () => {
       <Navbar_Admin />
       <h1 className="text-4xl font-bold text-center mt-10">Order Details</h1>
       <div className="container mx-auto my-10 flex flex-col gap-4">
-        <input type="text" className="form-control" id="searchOrders" placeholder="Search orders" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} />
+        <input
+          type="text"
+          className="form-control"
+          id="searchOrders"
+          placeholder="Search orders"
+          value={searchQuery}
+          onChange={(event) => setSearchQuery(event.target.value)}
+        />
         <div style={{ height: 400, width: '100%' }}>
           <DataGrid
             rows={filteredOrders}

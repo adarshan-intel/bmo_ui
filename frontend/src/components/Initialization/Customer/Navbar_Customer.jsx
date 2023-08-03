@@ -6,7 +6,13 @@ import Button from '../../../intel_components/Button';
 
 const Navbar_Customer = ({ username }) => {
   const navigate = useNavigate();
-  const navigationHeaders = ['Update default RV Info', 'Device Dashboard', 'OV Manipulation', 'Edit Customer profile', 'Help/About Us'];
+  const navigationHeaders = [
+    'Update default RV Info',
+    'Device Dashboard',
+    'OV Manipulation',
+    'Edit Customer profile',
+    'Help/About Us',
+  ];
   const navigationHeadersMap = {
     'Update default RV Info': '/update_rv_info',
     'Device Dashboard': '/device_dashboard',
@@ -46,7 +52,14 @@ const Navbar_Customer = ({ username }) => {
             BMO Initialization Server
           </Typography>
           <div>
-            <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleMenu} color="inherit">
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
               <AccountCircle />
             </IconButton>
             <Menu
@@ -75,7 +88,10 @@ const Navbar_Customer = ({ username }) => {
         <ul className="flex justify-center gap-10 list-none">
           {navigationHeaders.map((header, index) => (
             <li key={index}>
-              <Button text={header} onClick={() => navigate('/customer' + navigationHeadersMap[header])} />
+              <Button
+                text={header}
+                onClick={() => navigate('/customer' + navigationHeadersMap[header])}
+              />
             </li>
           ))}
         </ul>

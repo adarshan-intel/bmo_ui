@@ -32,36 +32,87 @@ const Edit_Customer_Page = () => {
         <h1 className="text-4xl font-bold text-center">Edit Customer Page</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 my-4">
           {/* Name */}
-          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required className="form-control" />
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="form-control"
+          />
 
           {/* Address/Contact */}
-          <textarea placeholder="Address/Contact" value={addressContact} onChange={(e) => setAddressContact(e.target.value)} required className="form-control" />
+          <textarea
+            placeholder="Address/Contact"
+            value={addressContact}
+            onChange={(e) => setAddressContact(e.target.value)}
+            required
+            className="form-control"
+          />
 
           {/* Owner Certificate */}
           <div>
             <label htmlFor="ownerCertificate">Owner Certificate:</label>
-            <input type="file" id="ownerCertificate" onChange={(e) => setOwnerCertificate(e.target.files[0])} className="form-control" />
+            <input
+              type="file"
+              id="ownerCertificate"
+              onChange={(e) => setOwnerCertificate(e.target.files[0])}
+              className="form-control"
+            />
           </div>
 
           {/* RV DNS */}
-          <input type="text" placeholder="RV DNS" value={rvDns} onChange={(e) => setRvDns(e.target.value)} required className="form-control" />
+          <input
+            type="text"
+            placeholder="RV DNS"
+            value={rvDns}
+            onChange={(e) => setRvDns(e.target.value)}
+            required
+            className="form-control"
+          />
 
           {/* RV IP */}
-          <input type="text" placeholder="RV IP" value={rvIp} onChange={(e) => setRvIp(e.target.value)} required className="form-control" />
+          <input
+            type="text"
+            placeholder="RV IP"
+            value={rvIp}
+            onChange={(e) => setRvIp(e.target.value)}
+            required
+            className="form-control"
+          />
 
           {/* RV Port */}
-          <input type="text" placeholder="RV Port" value={rvPort} onChange={(e) => setRvPort(e.target.value)} required className="form-control" />
+          <input
+            type="text"
+            placeholder="RV Port"
+            value={rvPort}
+            onChange={(e) => setRvPort(e.target.value)}
+            required
+            className="form-control"
+          />
 
           {/* Protocol */}
           <div>
             <label>Protocol:</label>
             <div className="flex gap-3">
               <label>
-                <input type="radio" value="http" checked={protocol === 'http'} onChange={() => setProtocol('http')} required />
+                <input
+                  type="radio"
+                  value="http"
+                  checked={protocol === 'http'}
+                  onChange={() => setProtocol('http')}
+                  required
+                />
                 HTTP
               </label>
               <label>
-                <input type="radio" value="https" checked={protocol === 'https'} onChange={() => setProtocol('https')} required />
+                <input
+                  type="radio"
+                  value="https"
+                  checked={protocol === 'https'}
+                  onChange={() => setProtocol('https')}
+                  required
+                />
                 HTTPS
               </label>
             </div>

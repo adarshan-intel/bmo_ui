@@ -1,30 +1,27 @@
-import { AccountCircle } from '@mui/icons-material';
+import React from 'react';
 import { AppBar, IconButton, Menu, MenuItem, Toolbar } from '@mui/material';
-import React, { useState } from 'react';
+import { AccountCircle } from '@mui/icons-material';
+import Button from '../../intel_components/Button';
 import { useNavigate } from 'react-router-dom';
-import '../../../../../frontend/src/dist/css/dlux.css'; // dlux-intel css file"
-import Button from '../../../intel_components/Button';
 
-const Navbar_Admin = ({ username }) => {
+const Navbar_Deploy = () => {
   const navigate = useNavigate();
   const navigationHeaders = [
-    'Update default RV Info',
-    'Device Dashboard',
-    'View/Post Order Details',
-    'Download Micro-OsImage',
-    'Customer Details',
+    'Device dashboard',
+    'Upload new OVs',
+    'Manage device profiles',
+    'Assign Device Profiles',
     'Help/About Us',
   ];
   const navigationHeadersMap = {
-    'Update default RV Info': '/update_rv_info',
-    'Device Dashboard': '/device_dashboard',
-    'View/Post Order Details': '/order_details',
-    'Download Micro-OsImage': '/download_micro_osimage',
-    'Customer Details': '/customer_details',
+    'Device dashboard': '/device_dashboard',
+    'Upload new OVs': '/upload_ovs',
+    'Manage device profiles': '/manage_device_profiles',
+    'Assign Device Profiles': '/assign_device_profiles',
     'Help/About Us': '/help_about_us',
   };
 
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -36,22 +33,23 @@ const Navbar_Admin = ({ username }) => {
 
   const handleLogout = () => {
     setAnchorEl(null);
-    // TODO
+    // TODO: Implement logout functionality
     navigate('/');
   };
 
   const handleProfile = () => {
     // display user profile
     setAnchorEl(null);
-    // TODO
-    navigate('/admin/profile');
+    // TODO: Navigate to user profile page
+    navigate('/deploy/profile');
   };
+
   return (
     <>
       <AppBar position="static">
         <Toolbar>
-          <div class="flex flex-grow">
-            <h6 class="font-semibold text-xl">BMO Initialization Server</h6>
+          <div className="flex flex-grow">
+            <h6 className="font-semibold text-xl">BMO Deployment Server</h6>
           </div>
           <div>
             <IconButton
@@ -92,7 +90,7 @@ const Navbar_Admin = ({ username }) => {
             <li key={index}>
               <Button
                 text={header}
-                onClick={() => navigate('/admin' + navigationHeadersMap[header])}
+                onClick={() => navigate('/deploy' + navigationHeadersMap[header])}
               />
             </li>
           ))}
@@ -102,4 +100,4 @@ const Navbar_Admin = ({ username }) => {
   );
 };
 
-export default Navbar_Admin;
+export default Navbar_Deploy;
