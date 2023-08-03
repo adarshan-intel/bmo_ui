@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar_Admin from '../Admin/Navbar_Admin';
-import Button from '../../intel_components/Button'; // You need to import your custom Button component
+import Button from '../../../intel_components/Button';
 
 const Add_Customer = () => {
   const [name, setName] = useState('');

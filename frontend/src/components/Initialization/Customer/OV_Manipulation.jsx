@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar_Customer from './Navbar_Customer';
 import { DataGrid } from '@mui/x-data-grid';
-import Button from '../../intel_components/Button';
+import Button from '../../../intel_components/Button';
 import { useNavigate } from 'react-router-dom';
 
 const OV_Manipulation = () => {

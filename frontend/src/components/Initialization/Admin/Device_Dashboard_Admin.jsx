@@ -1,7 +1,7 @@
 import { TextField } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import React, { useState } from 'react';
-import { device_data } from '../../data/Device_data';
+import { device_data } from '../../../data/Device_data';
 import Navbar_Admin from './Navbar_Admin';
 
 const Device_Dashboard_Admin = () => {

@@ -2,8 +2,8 @@ import { AccountCircle } from '@mui/icons-material';
 import { AppBar, IconButton, Menu, MenuItem, Toolbar } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../../../frontend/src/dist/css/dlux.css'; // dlux-intel css file"
-import Button from '../../intel_components/Button';
+import '../../../../../frontend/src/dist/css/dlux.css'; // dlux-intel css file"
+import Button from '../../../intel_components/Button';
 
 const Navbar_Admin = ({ username }) => {
   const navigate = useNavigate();

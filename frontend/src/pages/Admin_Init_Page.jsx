@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar_Admin from '../components/Admin/Navbar_Admin';
+import Navbar_Admin from '../components/Initialization/Admin/Navbar_Admin';
 
 const Admin_Init_Page = ({ username }) => {
   return (

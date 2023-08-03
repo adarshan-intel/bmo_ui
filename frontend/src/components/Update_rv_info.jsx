@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar_Admin from './Admin/Navbar_Admin';
+import Navbar_Admin from './Initialization/Admin/Navbar_Admin';
 import Button from '../intel_components/Button';
 
 const Update_rv_info = () => {

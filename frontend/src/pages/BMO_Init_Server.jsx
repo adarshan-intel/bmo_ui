@@ -41,7 +41,7 @@ const BMO_Init_Server = () => {
           {/* <label htmlFor="validationCustomUsername" className="form-label">
             Username
           </label> */}
-          <div className="input-group has-validation">
+          <div className="input-gacroup has-validation">
             <span className="input-group-text" id="inputGroupPrepend">
               Username
             </span>

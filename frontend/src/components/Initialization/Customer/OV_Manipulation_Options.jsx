@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from '../../intel_components/Button';
+import Button from '../../../intel_components/Button';
 import Navbar_Customer from './Navbar_Customer';
 
 const OV_Manipulation_Options = () => {

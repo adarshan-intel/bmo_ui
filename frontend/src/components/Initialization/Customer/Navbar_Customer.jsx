@@ -2,7 +2,7 @@ import { AccountCircle } from '@mui/icons-material';
 import { AppBar, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../../intel_components/Button';
+import Button from '../../../intel_components/Button';
 
 const Navbar_Customer = ({ username }) => {
   const navigate = useNavigate();

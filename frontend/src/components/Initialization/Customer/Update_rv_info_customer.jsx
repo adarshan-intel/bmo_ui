@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar_Customer from '../Customer/Navbar_Customer';
-import Button from '../../intel_components/Button';
+import Button from '../../../intel_components/Button';
 
 const Update_rv_info_customer = () => {
   // State variables to keep track of form input values

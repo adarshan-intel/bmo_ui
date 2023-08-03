@@ -2,7 +2,7 @@ import { TextField } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import React, { useState } from 'react';
 import { Order_details } from '../data/Order_details';
-import Navbar_Admin from './Admin/Navbar_Admin';
+import Navbar_Admin from './Initialization/Admin/Navbar_Admin';
 
 const Order_Details = () => {
   // Sample data for the table
