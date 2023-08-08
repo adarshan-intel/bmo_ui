@@ -15,6 +15,7 @@ const Home = () => {
 
   return (
     <div className="flex gap-6 items-center justify-center h-screen">
+      
       <Button text={'BMO Initialization Server'} btn_type={'primary'} onClick={handleInit} />
       <Button text={'BMO Deployment Server'} btn_type={'success'} onClick={handleDeploy} />
     </div>

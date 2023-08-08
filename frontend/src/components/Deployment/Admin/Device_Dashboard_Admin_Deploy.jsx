@@ -43,7 +43,7 @@ const Device_Dashboard_Admin_Deploy = ({ customer }) => {
   return (
     <>
       <Navbar_Deploy /> {/* Render the Navbar_Deploy component */}
-      <h1 className="text-4xl font-bold text-center mt-10">Device Dashboard Admin Deploy</h1>
+      <h1 className="text-4xl font-bold text-center mt-10">Device Dashboard </h1>
       <div className="container mx-auto my-10 flex flex-col gap-4">
         <input
           type="text"
